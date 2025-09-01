@@ -1,0 +1,17 @@
+<!-- Navigation -->
+<nav class="sidebar-nav">
+    <div class="container-fluid">
+        <div>
+            <a class="navbar-brand" style="width: 150px" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav " style="width: 100px">
+                {{ range .Site.Params.menus }}
+                    <li><a href="{{.href | relLangURL}}/">{{.title}}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+

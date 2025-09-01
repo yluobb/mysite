@@ -1,0 +1,63 @@
+{{ define "main" }}
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!--
+                {{ if not (eq (.Param "showtoc") false) }}
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                {{.TableOfContents}}
+                {{ end }}
+                -->
+                {{ .Content }}
+
+                {{ if or (.PrevInSection) (.NextInSection) }}
+                <hr>
+                <ul class="pager">
+                    {{ if .PrevInSection }}
+                    <li class="previous">
+                        <a href="{{ .PrevInSection.RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title}}">&larr;
+                            Previous Post</a>
+                    </li>
+                    {{ end }}
+                    {{ if .NextInSection }}
+                    <li class="next">
+                        <a href="{{ .NextInSection.RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title}}">Next
+                            Post &rarr;</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+
+            </div>
+
+            <!-- Side Catalog Container -->
+            {{ if not (eq (.Param "showtoc") false) }}
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</article>
+
+{{ end }}
