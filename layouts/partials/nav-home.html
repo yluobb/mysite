@@ -1,0 +1,22 @@
+<!-- Navigation -->
+<nav class="main-navigation" id="main-navigation">
+    <div class="nav-container">
+        <div class="nav-menu">
+            <ul class="nav-list">
+                {{ range .Site.Params.menus }}
+                <li class="nav-item">
+                    <a href="{{.href | relLangURL}}" class="nav-link {{ if eq $.RelPermalink .href }}active{{ end }}">{{.title}}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu Toggle -->
+<button class="mobile-menu-toggle" id="mobile-menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+

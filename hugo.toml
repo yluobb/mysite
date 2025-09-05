@@ -4,12 +4,15 @@ languageCode = "en-us"
 preserveTaxonomyNames = true
 hasCJKLanguage = true
 
+# Disable taxonomy and term page generation
+disableKinds = ["taxonomy", "term"]
+
 
 [pagination]
   pagerSize = 10 # frontpage pagination
 
 [outputs]
-home = ["HTML", "RSS", "Algolia"]
+home = ["HTML", "RSS"]
 
 [params]
   header_image = "img/sheep5.jpg"
@@ -41,9 +44,6 @@ home = ["HTML", "RSS", "Algolia"]
   
 
   [[params.menus]]
-  title =  "About"
-  href =  "/about/"
-  [[params.menus]]
   title =  "Tech"
   href =  "/tech/"
   [[params.menus]]
@@ -56,15 +56,7 @@ home = ["HTML", "RSS", "Algolia"]
   title =  "Photos"
   href =  "/photos/"
 
-[outputFormats.Algolia]
-baseName = "algolia"
-isPlainText = true
-mediaType = "application/json"
-notAlternative = true
 
-[params.algolia]
-vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
-params = ["categories", "tags"] 
 
 [markup]
   [markup.tableOfContents]

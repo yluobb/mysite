@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
-<body>
+<body class="{{ if .IsHome }}landing{{ end }}">
     <div class="site-wrapper">
         <!-- Navigation - shared across all pages -->
-        {{ partial "nav.html" . }}
+        {{if .IsHome}}
+        {{ partial "nav-home.html" . }}
+        {{ else }}
+        {{ partial "nav-share.html" . }}
+        {{ end }}
 
         <!-- Page Header - only for about/tech/improv/podcast/photos pages -->
         {{ if and (ne .Kind "home") (ne .Type "page") }}
