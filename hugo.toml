@@ -37,9 +37,7 @@ home = ["HTML", "RSS", "Algolia"]
   rss            = true 
   email          = "youremail@gmail.com"
   linkedin       = "https://www.linkedin.com/in/yourlinkedinid"
-  stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
   github         = "https://github.com/yourgithub"
-  wechat         = "your wechat qr code image"
   
 
   [[params.menus]]
