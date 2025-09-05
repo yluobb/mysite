@@ -2,36 +2,34 @@
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
 <body>
-    <div style="display: flex; min-height: 100vh;">
+    <div class="site-wrapper">
+        <!-- Navigation - shared across all pages -->
+        {{ partial "nav.html" . }}
 
-        <main style="flex-grow: 1;">
-            <!-- Page Header -->
-            {{ block "header" . }}
-            <header class="intro-header" style="background-image: url('{{ .Site.Params.header_image | relURL }}'); padding: 2rem; color: white;">
-                <div class="container">
-                    <!-- Left Sidebar Navigation -->
-                    <aside style="width: 200px; padding: 1rem; position: fixed; left: 0; top: 0; height: 100vh;">
-                        {{ partial "nav.html" . }}
-                    </aside>
-
-                    <div class="site-heading">
-                        <h1>{{ .Site.Title }}</h1>
-                        <p>HEADER IS NOT HERE</p>
-                        <span class="subheading">
-                            {{ .Site.Params.slogan }}
-                        </span>
-                    </div>
+        <!-- Page Header - only for about/tech/improv/podcast/photos pages -->
+        {{ if and (ne .Kind "home") (ne .Type "page") }}
+        {{ block "header" . }}
+        <header class="page-header">
+            <div class="container">
+                <div class="page-heading">
+                    <h1>{{ .Title }}</h1>
+                    {{ if .Params.subtitle }}
+                    <span class="subheading">{{ .Params.subtitle }}</span>
+                    {{ end }}
                 </div>
-            </header>
-            {{ end }}
+            </div>
+        </header>
+        {{ end }}
+        {{ end }}
 
-            <!-- Main Content Block -->
+        <!-- Main Content Block -->
+        <main class="main-content">
             {{ block "main" . }}
             {{ end }}
-
-            {{ partial "footer.html" . }}
         </main>
 
+        <!-- Footer - shared across all pages -->
+        {{ partial "footer.html" . }}
     </div>
 </body>
 </html>

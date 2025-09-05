@@ -1,17 +1,18 @@
 <!-- Navigation -->
-<nav class="sidebar-nav">
-    <div class="container-fluid">
-        <div>
-            <a class="navbar-brand" style="width: 150px" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
+<nav class="main-navigation">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
         </div>
-        <div>
-            <ul class="nav navbar-nav " style="width: 100px">
+        <div class="nav-menu">
+            <ul class="nav-list">
                 {{ range .Site.Params.menus }}
-                    <li><a href="{{.href | relLangURL}}/">{{.title}}</a></li>
+                <li class="nav-item">
+                    <a href="{{.href | relLangURL}}" class="nav-link {{ if eq $.RelPermalink .href }}active{{ end }}">{{.title}}</a>
+                </li>
                 {{ end }}
             </ul>
         </div>
     </div>
-    <!-- /.container -->
 </nav>
 

@@ -1,6 +1,22 @@
 {{ define "main" }}
-  <section class="intro">
-    <h1>Welcome to My Site</h1>
-    <p>This is my introductory homepage.</p>
-  </section>
+<section class="homepage-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Welcome to My Website</h1>
+            <p class="hero-subtitle">Software Developer • Photographer • Podcaster • Improv Actor</p>
+            <div class="hero-cta">
+                <a href="/about/" class="btn btn-primary">Learn More About Me</a>
+                <a href="/tech/" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="homepage-content">
+    <div class="container">
+        <div class="content-wrapper">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
 {{ end }}

@@ -52,38 +52,23 @@
 
     <link rel="canonical" href="{{ .RelPermalink }}">
 
-    {{ if .Site.Params.disqus_proxy }}
-    <link rel="stylesheet" href="{{ "css/iDisqus.min.css" | relURL }}"/>
-    {{ end }}
-    
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL }}">
 
-    <!-- Clean White theme CSS -->
-    <link rel="stylesheet" href="{{ "css/hugo-theme-cleanwhite.min.css" | relURL }}">
-
-    <!-- zangshang CSS -->
-    <link rel="stylesheet" href="{{ "css/zanshang.css" | relURL }}">
-
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="{{ "css/font-awesome.all.min.css" | relURL }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!--  Custom CSS  -->
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
 
     <!-- jQuery -->
-    <script src="{{ "js/jquery.min.js" | relURL }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
-
-    <!-- Hux Theme JavaScript -->
-    <script src="{{ "js/hux-blog.min.js" | relURL }}"></script>
-
-    <!-- lazy load image JavaScript -->
-    <script src="{{ "js/lazysizes.min.js" | relURL }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
     {{ range .Site.Params.custom_js }}

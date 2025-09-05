@@ -1,21 +1,49 @@
 {{ define "main" }}
-<!-- Post Content -->
-<article>
+<div class="section-content">
     <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
-         	{{ .Content }}
-            </div>
-
+        <div class="content-wrapper">
+            {{ .Content }}
         </div>
+        
+        {{ if eq .Section "tech" }}
+        <div class="section-posts">
+            <h2>Tech Posts</h2>
+            <div class="posts-grid">
+                {{ range where .Site.RegularPages "Section" "posts" }}
+                {{ if in .Params.categories "Tech" }}
+                <article class="post-card">
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    {{ if .Summary }}
+                    <p class="post-summary">{{ .Summary }}</p>
+                    {{ end }}
+                    {{ if .Date }}
+                    <time class="post-date">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ end }}
+                </article>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        {{ else if .Pages }}
+        <div class="section-posts">
+            <h2>Recent Posts</h2>
+            <div class="posts-grid">
+                {{ range .Pages }}
+                <article class="post-card">
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    {{ if .Summary }}
+                    <p class="post-summary">{{ .Summary }}</p>
+                    {{ end }}
+                    {{ if .Date }}
+                    <time class="post-date">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ end }}
+                </article>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
     </div>
-</article>
-
+</div>
 {{ end }}
 
 

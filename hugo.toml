@@ -1,4 +1,4 @@
-baseurl = "https://zhaohuabing.com"
+baseurl = "http://localhost:1313/"
 title = "Bonnie Luo"
 languageCode = "en-us"
 preserveTaxonomyNames = true
@@ -16,7 +16,7 @@ home = ["HTML", "RSS", "Algolia"]
   SEOTitle = "Bonnie Luo"
   description = ""
   keyword = ""
-  slogan = "slogan"
+  slogan = "Software Developer • Photographer • Podcaster • Improv Actor"
   upstreamAttribution = true
 
   image_404 = "img/404-bg.jpg"
@@ -43,6 +43,9 @@ home = ["HTML", "RSS", "Algolia"]
   
 
   [[params.menus]]
+  title =  "About"
+  href =  "/about/"
+  [[params.menus]]
   title =  "Tech"
   href =  "/tech/"
   [[params.menus]]
@@ -54,9 +57,6 @@ home = ["HTML", "RSS", "Algolia"]
   [[params.menus]]
   title =  "Photos"
   href =  "/photos/"
-  [[params.menus]]
-  title =  "About"
-  href =  "/about/"
 
 [outputFormats.Algolia]
 baseName = "algolia"
