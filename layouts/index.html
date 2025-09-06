@@ -1,12 +1,14 @@
 {{ define "main" }}
 <section class="homepage-content">
-    <div class="container">
-        <div class="content-wrapper">
-            <div class="landing-bg">
-                <div class="overlay">
-                    <h1>Welcome to My Site</h1>
+    <div class="content-wrapper">
+        <div class="landing-bg">
+                            <div class="overlay">
+                    <div class="landing-content">
+                        <h1>{{ .Site.Title }}</h1>
+                        <p class="landing-subtitle">{{ .Site.Params.slogan }}</p>
+                        <p class="landing-description">{{ .Content }}</p>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </section>
